@@ -74,7 +74,13 @@ namespace MarinePressTest
             }
 
             //Test Line Segments
-            CompareVesselPaths(vessels[0], vessels[2]);
+            for (int i = 0; i < vessels.Length - 1; i++)
+            {
+                for (int j = i+1; j < vessels.Length; j++)
+                {
+                    CompareVesselPaths(vessels[i], vessels[j]);
+                }
+            }           
 
             Console.ReadLine();
         }
